@@ -1,0 +1,29 @@
+@model IList<mvc_crud.Models.DB.Pessoa>
+
+@{
+    ViewData["Title"] = "Cadastro de Pessoas";
+}
+
+<a asp-action="Novo">Criar novo</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Nascimento</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (mvc_crud.Models.DB.Pessoa pessoa in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelPessoa => pessoa.Id)</td>
+                <td>@Html.DisplayFor(modelPessoa => pessoa.Nome)</td>
+                <td>@Html.DisplayFor(modelPessoa => pessoa.Nascimento)</td>
+                <td>@Html.DisplayFor(modelPessoa => pessoa.Email)</td>
+            </tr>
+        }
+    </tbody>
+</table>
